@@ -87,4 +87,14 @@ public class BookController {
         bookService.deleteBook(id);
         return "redirect:/books";
     }
+
+    //管理者画面へのアクセス制御
+    @Controller
+    @RequestMapping("/admin")
+    public class AdminController {
+        @GetMapping("/dashboard")
+        public String adminDashboard() {
+            return "admin/dashboard";
+        }
+    }
 }
